@@ -2,7 +2,6 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from 'notiflix';
 
-
 const datePickerEl = document.querySelector('#datetime-picker');
 
 const dataInputEls = document.querySelector('.data-input');
@@ -45,6 +44,24 @@ labelEls.forEach((item) => {
     item.style.padding = '0px 5px';
 })
 
+let time = null;
+
+btnEl.addEventListener('click', () => {
+            btnEl.disabled = true;
+            datePickerEl.disabled = true;
+            let intervalId =  setInterval(() => {
+
+              time -= 1000;
+              const timeObject = convertMs(time);
+              const timeFormatted = addLeadingZero(timeObject);
+              timerInterfaceChange(timeFormatted);
+
+                if (time <= 1000) {
+                   datePickerEl.disabled = false;
+                   clearInterval(intervalId);
+                }
+            }, 1000);           
+        });   
 
 const options = {
     enableTime: true,
@@ -65,23 +82,7 @@ const options = {
         datePickerEl.disabled = false;
         let timeLeft = selectedDates[0].getTime() - Date.now();
         
-        btnEl.addEventListener('click', () => {
-            btnEl.disabled = true;
-            datePickerEl.disabled = true;
-            let intervalId =  setInterval(() => {
-
-              timeLeft -= 1000;
-              const timeObject = convertMs(timeLeft);
-              const timeFormatted = addLeadingZero(timeObject);
-              timerInterfaceChange(timeFormatted);
-
-                if (timeLeft <= 1000) {
-                    console.log('123');
-                    datePickerEl.disabled = false;
-                   clearInterval(intervalId);
-                }
-            }, 1000);           
-        });        
+        time = timeLeft;
     }
 }
 
