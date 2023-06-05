@@ -75,9 +75,10 @@ const options = {
               const timeFormatted = addLeadingZero(timeObject);
               timerInterfaceChange(timeFormatted);
 
-               if (timeLeft <= 1000) {
+                if (timeLeft <= 1000) {
+                    console.log('123');
+                    datePickerEl.disabled = false;
                    clearInterval(intervalId);
-                   datePickerEl.disabled = false;
                 }
             }, 1000);           
         });        
@@ -115,31 +116,4 @@ function addLeadingZero(value) {
     let seconds =  value.seconds.toString().padStart(2, '0');
     return { days, hours, minutes, seconds };
 }
-// class Timer {
-//     #element;
-//     #options;
-
-//     constructor(elementSelector, options) {
-//         this.#element = document.querySelector(elementSelector);
-//         this.#options = options;
-
-//         this.start();
-//     }
-
-//     start() {
-//         setInterval(() => {
-//             let now = Date.now();
-//             let target = 
-//         }, 1000);
-//     }
-
-//     stop() {
-        
-//     }
-// }
-
-// let timer = new Timer('.timer', {
-//     label: 'До обраної дати:',
-//     target: datePickerEl.value,
-// });
-
+// 
