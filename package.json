@@ -2,7 +2,7 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://OlgaBilynska.github.io/goit-js-hw-09",
+  "homepage": "https://olgabilynska.github.io/Color-Switcher-Countdown-Timer-and-Promise-Generator-on-JS/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
