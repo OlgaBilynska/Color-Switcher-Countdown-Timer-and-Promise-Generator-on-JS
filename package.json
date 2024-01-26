@@ -5,7 +5,7 @@
   "homepage": "https://olgabilynska.github.io/Color-Switcher-Countdown-Timer-and-Promise-Generator-on-JS/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
+    "build": "parcel build src/*.html --public-url /Color-Switcher-Countdown-Timer-and-Promise-Generator-on-JS/"
   },
   "repository": {
     "type": "git",
